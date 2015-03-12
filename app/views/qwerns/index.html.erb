@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Qwerns</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Bio</th>
+      <th>Birthday</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @qwerns.each do |qwern| %>
+      <tr>
+        <td><%= qwern.name %></td>
+        <td><%= qwern.bio %></td>
+        <td><%= qwern.birthday %></td>
+        <td><%= link_to 'Show', qwern %></td>
+        <td><%= link_to 'Edit', edit_qwern_path(qwern) %></td>
+        <td><%= link_to 'Destroy', qwern, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Qwern', new_qwern_path %>

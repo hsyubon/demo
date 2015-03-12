@@ -1,0 +1,11 @@
+class CreateQwerns < ActiveRecord::Migration
+  def change
+    create_table :qwerns do |t|
+      t.string :name
+      t.text :bio
+      t.date :birthday
+
+      t.timestamps null: false
+    end
+  end
+end

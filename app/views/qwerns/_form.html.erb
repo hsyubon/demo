@@ -1,0 +1,29 @@
+<%= form_for(@qwern) do |f| %>
+  <% if @qwern.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@qwern.errors.count, "error") %> prohibited this qwern from being saved:</h2>
+
+      <ul>
+      <% @qwern.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :bio %><br>
+    <%= f.text_area :bio %>
+  </div>
+  <div class="field">
+    <%= f.label :birthday %><br>
+    <%= f.date_select :birthday %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
